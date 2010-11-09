@@ -23,6 +23,8 @@ from google.appengine.api import urlfetch
 import os
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
+from django.utils import simplejson as json
+
 
 class Tweets(db.Model):
     username = db.StringProperty(multiline=False)
@@ -38,53 +40,25 @@ class MainHandler(webapp.RequestHandler):
     path = os.path.join(os.path.dirname(__file__), 'index.html')
     self.response.out.write(template.render(path, template_values))
 
+
+
 class Statuspage(webapp.RequestHandler):
   def post(self):
     tweets = Tweets()
     tweets.username = self.request.get('username')
 
-    fetched = urlfetch.fetch("http://api.twitter.com/1/statuses/user_timeline.json?screen_name="+tweets.username+"&count=5")
-    statustext = fetched.content
+    fetched = urlfetch.fetch("http://api.twitter.com/1/statuses/user_timeline.json?screen_name="+tweets.username+"&count=200")
+    statustext = json.loads(fetched.content)
+    
+    tweets1 = []
+    for tweetInfo in statustext:
+	  tweets1.append(tweetInfo["text"])
+    
+    tweets2 = '<br><br>'.join(tweets1)
 
-    loc1st = statustext.find('"text":"')
-    status1a = statustext[loc1st+8:]
-    loc1end = status1a.find('"},')
-    status1b = status1a[:loc1end-2]
-
-    loc2st = status1a.find('"text":"')
-    status2a = status1a[loc2st+8:]
-    loc2end = status2a.find('"},')
-    status2b = status2a[:loc2end-2]
-
-    loc3st = status2a.find('"text":"')
-    status3a = status2a[loc3st+8:]
-    loc3end = status3a.find('"},')
-    status3b = status3a[:loc3end-2]
-
-    loc4st = status3a.find('"text":"')
-    status4a = status3a[loc4st+8:]
-    loc4end = status4a.find('"},')
-    status4b = status4a[:loc4end-2]
-
-    loc5st = status4a.find('"text":"')
-    status5a = status4a[loc5st+8:]
-    loc5end = status5a.find('"},')
-    status5b = status5a[:loc5end-2]
-
-
-
-    statusfound1 = status1b
-    statusfound2 = status2b
-    statusfound3 = status3b
-    statusfound4 = status4b
-    statusfound5 = status5b
-
+    
     content_values = {
-        'status1': statusfound1,
-        'status2': statusfound2,
-        'status3': statusfound3,
-        'status4': statusfound4,
-        'status5': statusfound5,
+        'status': tweets2,
         'username':tweets.username,
         }
 
