@@ -25,7 +25,7 @@ import re
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
 from django.utils import simplejson as json
-from _collections import deque, defaultdict
+from collections import deque, defaultdict
 
 
 
