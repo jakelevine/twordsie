@@ -49,19 +49,18 @@ class Statuspage(webapp.RequestHandler):
   def post(self):
     tweets = Tweets()
     tweets.username = self.request.get('username')
-    tweets.put()   
- 
-    tweets1 = []
+    tweets.put()
+    
     pagenum = 1
-
-    while (pagenum<17):
+    tweets1 = []
+    
+    while(pagenum<17):
       fetched = urlfetch.fetch("http://api.twitter.com/1/statuses/user_timeline.json?screen_name="+tweets.username+"&page="+str(pagenum))
       statustext = json.loads(fetched.content)
       pagenum = pagenum + 1
       for tweetInfo in statustext:
-	    tweets1.append(tweetInfo["text"])
+	      tweets1.append(tweetInfo["text"])
 	  
-    
     tweets2 = ''.join(tweets1)
     tweets2 = tweets2.lower()
     
@@ -85,7 +84,7 @@ class Statuspage(webapp.RequestHandler):
 
 
     content_values = {
-        'status': statustext,
+        'status': tweetput,
         'username':tweets.username,
         }
 
@@ -96,7 +95,7 @@ application = webapp.WSGIApplication(
                                      [('/', MainHandler),
                                       ('/statuspage',Statuspage)],
                                      debug=True)
-	
+
 def main():
 
   util.run_wsgi_app(application)
