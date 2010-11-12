@@ -54,7 +54,7 @@ class Statuspage(webapp.RequestHandler):
     pagenum = 1
     tweets1 = []
     
-    while(pagenum<17):
+    while(pagenum<10):
       fetched = urlfetch.fetch("http://api.twitter.com/1/statuses/user_timeline.json?screen_name="+tweets.username+"&page="+str(pagenum))
       statustext = json.loads(fetched.content)
       pagenum = pagenum + 1
