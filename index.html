@@ -1,39 +1,78 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
-<title>Your Favorite Twords - Twordsie</title>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="generator" content="TextMate http://macromates.com/">
-	<meta name="author" content="Jake Levine">
-	<script type="text/javascript">
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-2442790-9']);
-	  _gaq.push(['_trackPageview']);
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd"> 
+<title>Your Favorite Twords - Twordsie</title> 
+<html lang="en"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<meta name="generator" content="TextMate http://macromates.com/"> 
+	<meta name="author" content="Jake Levine"> 
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
 
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+</head> 
+<body> 
 
-	</script>
-</head>
-<body>
-<br>
-<b>Twordsie will show you your most tweeted words!</b>
-<br><br>
-Enter your Twitter username:
-<br>
-<form action="/statuspage" method="post">
-   <div><input type="text" id="username" name="username" rows="1" cols="30"></textarea></div>
-   <div><input type="submit" value="Submit"></div>
- </form>
+<div id="yell">know thyself!</div> 
+<div id="sub-yell">Twordsie will show you your most tweeted words.</div> 
+ 
+		<form action="/statuspage" method="get"> 
+   			<div><input type="text" class="biginput prefill" name="user" value ="{{user}}" title="@ your twitter name" /></div> 
+   			<div><input type="submit" class="button" value="Submit" /></div> 
+		</form> 
+ 
+		<div id="footer"> 
+			Twordsie is an experiment in programming from Jake and Alex
+			<br>
+		<div id ="footersplitleft">
+			<br>
+			<b>Jake Links</b>
+			<br>
+			<a href="http://blog.jakerlevine.com"><img src="/images/rss.png" width="30" height="30"/></a>
+			<a href="http://twitter.com/jrlevine"><img src="/images/twitter.png" width="30" height="30"/></a>
+			<a href="http://www.linkedin.com/in/levinejake"><img src="/images/linkedin.png" width="30" height="30"/></a>
+		</div>
+		<div id ="footersplitright">
+			<br>
+			<b>Alex Links</b>
+			<br>
+			<a href="http://twitter.com/alexmr"><img src="/images/twitter.png" width="30" height="30"/></a>
+			<a href="http://www.linkedin.com/in/rosenalex"><img src="/images/linkedin.png" width="30" height="30"/></a>
+		</div>
 
-<br>
-<br>
-Twordsie is an experiment in programming:
- <a href="http://www.jakerlevine.com">Jake's Home | <a href="http://blog.jakerlevine.com">Jake's Blog | <a href ="mailto:jake@jakerlevine.com">Contact Jake</a>
-</body>
+		</div> 
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
+		<script type="text/javascript"> 
+			$(function () {
+				$('.prefill').prefill();
+			});
+			
+			$.fn.prefill = function () {
+				$(this).focus(function () {
+					var jq = $(this);
+					
+					if (!jq.hasClass('on')) {
+						jq.val('').addClass('on');
+					}
+				}).blur(function () {
+					var jq = $(this);
+					
+					if (!jq.val()) {
+						jq.val(jq.attr('title')).removeClass('on');
+					}
+				}).val($(this).attr('title'));
+			};
+		
+			//Google Analytics
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-2442790-9']);
+		  _gaq.push(['_trackPageview']);
+	
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script> 
+	</body> 
 </html>

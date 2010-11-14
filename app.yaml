@@ -4,5 +4,13 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /images/(.*\.(gif|png|jpg))
+  static_files: images/\1
+  upload: images/(.*\.(gif|png|jpg))
+- url: /js
+  static_dir: js
 - url: .*
   script: main.py
+
