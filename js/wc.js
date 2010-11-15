@@ -117,10 +117,14 @@ WordCloud.prototype.draw = function(data, options) {
     var word = wordList[i];
     var text = word;
     var freq = wordMap[word.toLowerCase()];
-    var size = WordCloud.MIN_UNIT_SIZE +
-         Math.round((freq - minFreq) / range * WordCloud.RANGE_UNIT_SIZE);
-    html.push('<span class="word-cloud-', size, '">', text, '</span> ');
-  }
+    if (freq > 1)
+	{
+		var size = WordCloud.MIN_UNIT_SIZE +
+	         Math.round((freq - minFreq) / range * WordCloud.RANGE_UNIT_SIZE);
+	    html.push('<span class="word-cloud-', size, '">', text, '</span> ');
+	  }
+	}
+	
   html.push('</div>');
 
   this.container.innerHTML = html.join('');
