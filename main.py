@@ -26,6 +26,9 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import template
 from google.appengine.api import urlfetch
 
+class Tweets(db.Model):
+	username = db.StringProperty(multiline=False)
+
 
 class MainHandler(webapp.RequestHandler):
 	def get(self):
@@ -40,7 +43,11 @@ class MainHandler(webapp.RequestHandler):
 class Statuspage(webapp.RequestHandler):
 	def get(self):
  		#sets up wordcloud
-		user = self.request.get('user')		
+		user = self.request.get('user')	
+		tweets = Tweets()
+		tweets.username = user
+		tweets.put()
+			
 		fetched = urlfetch.fetch("http://api.twitter.com/1/statuses/user_timeline.json"
 								 "?screen_name="+user+"&count=200")
 		tweets = json.loads(fetched.content)
