@@ -20,12 +20,11 @@ body {
 	color:gray;
 	font: normal small-caption;
 	text-align: center;
-	position: absolute;
+	margin:auto;
 	width:100%;
 	}
 	
 #footersplitleft{
-
 	float:left;
 	font-size:20px;
 	margin-left:35%;
