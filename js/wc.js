@@ -49,7 +49,7 @@ WordCloud.addWords = function(text, list, map, stopWords) {
       word += c;
     }
   }
-  if (word.length > 0) {
+  if (word.length > 2) {
     WordCloud.addWord(word, list, map, stopWords);
   }
 };
