@@ -8,11 +8,10 @@
 	<meta name="author" content="Jake Levine">
 	<!-- Date: 2010-10-29 -->
 
-    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
-
-    <link rel="stylesheet" type="text/css" href="/stylesheets/wc.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css"/>
     <script type="text/javascript" src="/js/wc.js"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script src="http://code.jquery.com/jquery-1.4.4.js"></script>
     <script type="text/javascript">
       google.load("visualization", "1");
       google.setOnLoadCallback(draw);
@@ -22,44 +21,58 @@
         var outputDiv = document.getElementById('wcdiv');
         var wc = new WordCloud(outputDiv);
         wc.draw(data, null);
-		wc.draw(data, {stopWords: 'RT mp com I doesn Yourcom The http ly bit a about above above across after afterwards again against all almost alone along already also although always am among amongst amoungst amount an and another any anyhow anyone anything anyway anywhere are around as at back be became because become becomes becoming been before beforehand behind being below beside besides between beyond bill both bottom but by call can cannot cant co con could couldnt cry de describe detail do done down due during each eg eight either eleven else elsewhere empty enough etc even ever every everyone everything everywhere except few fifteen fify fill find fire first five for former formerly forty found four from front full further get give go had has hasnt have he hence her here hereafter hereby herein hereupon hers herself him himself his how however hundred ie if in inc indeed interest into is it its itself keep last latter latterly least less ltd made many may me meanwhile might mill mine more moreover most mostly move much must my myself name namely neither never nevertheless next nine no nobody none noone nor not nothing now nowhere of off often on once one only onto or other others otherwise our ours ourselves out over own part per perhaps please put rather re same see seem seemed seeming seems serious several she should show side since sincere six sixty so some somehow someone something sometime sometimes somewhere still such system take ten than that the their them themselves then thence there thereafter thereby therefore therein thereupon these they thickv thin third this those though three through throughout thru thus to together too top toward towards twelve twenty two un under until up upon us very via was we well were what whatever when whence whenever where whereafter whereas whereby wherein whereupon wherever whether which while whither who whoever whole whom whose why will with within without would yet you your yours yourself yourselves the'});
+		wc.draw(data, {stopWords: 'RT com I doesn Yourcom The http ly bit a about above above across after afterwards again against all almost alone along already also although always am among amongst amoungst amount an and another any anyhow anyone anything anyway anywhere are around as at back be became because become becomes becoming been before beforehand behind being below beside besides between beyond bill both bottom but by call can cannot cant co con could couldnt cry de describe detail do done down due during each eg eight either eleven else elsewhere empty enough etc even ever every everyone everything everywhere except few fifteen fify fill find fire first five for former formerly forty found four from front full further get give go had has hasnt have he hence her here hereafter hereby herein hereupon hers herself him himself his how however hundred ie if in inc indeed interest into is it its itself keep last latter latterly least less ltd made many may me meanwhile might mill mine more moreover most mostly move much must my myself name namely neither never nevertheless next nine no nobody none noone nor not nothing now nowhere of off often on once one only onto or other others otherwise our ours ourselves out over own part per perhaps please put rather re same see seem seemed seeming seems serious several she should show side since sincere six sixty so some somehow someone something sometime sometimes somewhere still such system take ten than that the their them themselves then thence there thereafter thereby therefore therein thereupon these they thickv thin third this those though three through throughout thru thus to together too top toward towards twelve twenty two un under until up upon us very via was we well were what whatever when whence whenever where whereafter whereas whereby wherein whereupon wherever whether which while whither who whoever whole whom whose why will with within without would yet you your yours yourself yourselves the'});
+
       }
     </script>
 
+
 </head>
-<body>
-<br><br>
-<a href="#lessons">Today's lessons and source code</a>
-<br><br>
-<h1><b>{{user}}'s favorite words:</b></h1>
+
+<body> 
+<div class="yell"><strong>{{user}}'s</strong> favorite words:</div>
 
 <div id="wcdiv"></div>
 
-{{tweetput}}
-
-<br><br>
-<a href = "https://github.com/jakelevine/twordsie/">Here's my code - disclaimer: I have no idea what I'm doing.</a>
-<br>
+<div class="blog">
 <a name="lessons">
-<h1>Today's lessons:</h1>
-11/09/10
-<h3>big day in codeland. learned how to split elements in an array, then count the words in those elements. still trying to figure out exactly what the code is doing, but I think after counting frequency, it is storing a key,value pair with word,frequency in a tuple. It was then a matter of trial and error to figure out how to format that tuple (interestingly, the simplest part took the longest, since no one asks questions THAT remedial on stackoverflow) <br>
-<br>
-Like last time, I found the heavy lifting<a href="http://stackoverflow.com/questions/3173592/word-frequency-in-text-using-python-but-disregard-stop-words"> on stackoverflow</a>, which is a kickass resource for newbs</h3>
+<h1 style="text-align: center;">Today's lessons:</h1>
+<strong>11/09/10</strong>
+<p>big day in codeland. learned how to split elements in an array, then count the words in those elements. still trying to figure out exactly what the code is doing, but I think after counting frequency, it is storing a key,value pair with word,frequency in a tuple. It was then a matter of trial and error to figure out how to format that tuple (interestingly, the simplest part took the longest, since no one asks questions THAT remedial on stackoverflow) </p>
+<p>Like last time, I found the heavy lifting<a href="http://stackoverflow.com/questions/3173592/word-frequency-in-text-using-python-but-disregard-stop-words"> on stackoverflow</a>, which is a kickass resource for newbs</p>
 <hr>
-11/08/10 v2
-<h3>woot, spitting out a nicely formatted array of the last 200 tweets (max available via API). thanks to <a href="http://www.twitter/wwarner">@wwarner</a> for help with json and for finding this <a href="http://stackoverflow.com/questions/1171584/how-can-i-parse-json-in-google-app-engine">awesome thread on stackoverflow.</a></h3>
+<strong>11/08/10 v2</strong>
+<p>woot, spitting out a nicely formatted array of the last 200 tweets (max available via API). thanks to <a href="http://www.twitter/wwarner">@wwarner</a> for help with json and for finding this <a href="http://stackoverflow.com/questions/1171584/how-can-i-parse-json-in-google-app-engine">awesome thread on stackoverflow.</a></p>
 <hr>
-11/08/10
-<h3>Created a bunch of finds and slices, now need to learn how to do this with a while loop.</h3>
+<strong>11/08/10</strong>
+<p>Created a bunch of finds and slices, now need to learn how to do this with a while loop.</p>
 <hr>
-11/07/10
-<h3>I learned all about how to slice with Google's <a href="http://www.youtube.com/watch?v=tKTZoB2Vjuk">corporate python courses.</a> Now to figure out how to slice multiple statuses into an array...
-</h3>
-<br>
-<br>
-Twordsie is an experiment in programming:
- <a href="http://www.jakerlevine.com">Jake's Home | <a href="http://blog.jakerlevine.com">Jake's Blog | <a href ="mailto:jake@jakerlevine.com">Contact Jake</a>
+<strong>11/07/10</strong>
+<p>I learned all about how to slice with Google's <a href="http://www.youtube.com/watch?v=tKTZoB2Vjuk">corporate python courses.</a> Now to figure out how to slice multiple statuses into an array...</p>
+</div>
+<p><a href="https://github.com/jakelevine/twordsie/"><img src="/images/download.png" width="40" height="40"/></a><br>
+<a href="https://github.com/jakelevine/twordsie/">Download our code</a></p>
+</p>
+<div class="footer"> 
+			Twordsie is an experiment in programming from Jake and Alex
+			<br>
+		<div id ="footersplitleft">
+			<br>
+			<b>Jake Links</b>
+			<br>
+			<a href="http://blog.jakerlevine.com"><img src="/images/rss.png" width="30" height="30"/></a>
+			<a href="http://twitter.com/jrlevine"><img src="/images/twitter.png" width="30" height="30"/></a>
+			<a href="http://www.linkedin.com/in/levinejake"><img src="/images/linkedin.png" width="30" height="30"/></a>
+		</div>
+		<div id ="footersplitright">
+			<br>
+			<b>Alex Links</b>
+			<br>
+			<a href="http://twitter.com/alexmr"><img src="/images/twitter.png" width="30" height="30"/></a>
+			<a href="http://www.linkedin.com/in/rosenalex"><img src="/images/linkedin.png" width="30" height="30"/></a>
+		</div>
+
+		</div> 
 
 
 </body>

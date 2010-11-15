@@ -4,31 +4,26 @@ body {
 	font-family: Helvetica
 }
 
-#yell {
+.yell {
 	font-weight: bold;
 	text-align: center;
 	color: #FFBE73;
 	font-size: 60px;
 }
 
-#sub-yell {
+.sub-yell {
 	margin-bottom: 20px;
 	color: #666;
 }
 
-p {
-	font: normal bold medium;
-	/* text-align: left; */
-	}
-
-#footer { 
+.footer { 
 	color:gray;
 	font: normal small-caption;
 	text-align: center;
 	position: absolute;
 	width:100%;
-	bottom: 10px;
-}
+	}
+	
 #footersplitleft{
 
 	float:left;
@@ -73,6 +68,33 @@ p {
 }
 .button:active {
 	background: #FFBE73;
+}
+
+.blog {
+	text-align: justify;
+	width: 50%;
+	margin-left: auto ;
+  	margin-right: auto ;
+  	display:none;
+}
+
+/* word-cloud styles */
+.word-cloud {font-family: arial; font-size: 10px; }
+.word-cloud-1 {font-size: 10px; color: #acc1f3; }
+.word-cloud-2 {font-size: 14px; color: #86a0dc; }
+.word-cloud-3 {font-size: 18px; color: #607ec5; }
+.word-cloud-4 {font-size: 22px; color: #264ca2; }
+.word-cloud-5 {font-size: 26px; color: #133b97; }
+.word-cloud-6 {font-size: 32px; color: #002a8b; }
+.word-cloud-7 {font-size: 36px; color: #071a41; }
+.word-cloud-8 {font-size: 40px; color: #081122; }
+.word-cloud-9 {font-size: 44px; color: #000000; }
+
+#wcdiv {
+	width: 600px;
+	text-align: justify;
+	margin-left: auto ;
+  	margin-right: auto ;
 }
 
 /*

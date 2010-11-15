@@ -74,11 +74,18 @@ class Statuspage(webapp.RequestHandler):
 				
 		tweetput = '<br><br>'.join(tweetarr)
 
+		mosttweet = finalFreq[0]
+		mosttweet1 = str(mosttweet)
+		mtstart = mosttweet1.find("'")
+		mtend = mosttweet1.find(",")
+		mtput = mosttweet1[mtstart+1:mtend-1]
+		
 
 		template_values = {
 							'tweet_data': json.dumps(data),
 							'user':user,
 							'tweetput':tweetput,
+							'mosttweet':mtput,
 							}
 							
 		path = os.path.join(os.path.dirname(__file__), 'statuspage.html')
