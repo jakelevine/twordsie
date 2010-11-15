@@ -33,11 +33,15 @@
 
 <div id="wcdiv"></div>
 <br><br>
-<a href="http://twitter.com/share" class="twitter-share-button" data-text="My most commonly tweeted word is {{mtput}}! What's yours?" data-count="none" data-via="@jrlevine and @alexmr">Tweet</a>
+<a href="http://twitter.com/share" class="twitter-share-button" data-text="My most commonly tweeted word is {{mosttweet}}! What's yours?" data-count="none" data-via="@jrlevine and @alexmr">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
 <br><br>
-<div><input type="submit" class="button" id="clickme" value="status updates" /></div> 
+<div class = "footer">
+Share your results on Twitter!
+</div>
+
+<br><br><br>
+<div><input type="submit" class="button" id="clickme" value="project updates" /></div> 
 <div id="blog">
 	<strong>11/09/10</strong>
 	<p>big day in codeland. learned how to split elements in an array, then count the words in those elements. still trying to figure out exactly what the code is doing, but I think after counting frequency, it is storing a key,value pair with word,frequency in a tuple. It was then a matter of trial and error to figure out how to format that tuple (interestingly, the simplest part took the longest, since no one asks questions THAT remedial on stackoverflow) </p>
@@ -75,12 +79,15 @@
 		</div>
 
 		</div> 
-	<script>$('#clickme').click(function() {
-  $('#blog').slideDown('slow', function() {
-    // Animation complete.
-  });
-});
-	</script>
+		<script>
+		$('#clickme').click(function () {
+		if ($('#blog').is(":hidden")) {
+		$("#blog").slideDown('slow');
+		} else {
+		$('#blog').slideUp('slow');
+		}
+		});
+		</script>
 
 </body>
 </html>
