@@ -72,12 +72,14 @@ class Statuspage(webapp.RequestHandler):
 				d[word] += 1
 		finalFreq = sorted(d.iteritems(), key = lambda t: t[1], reverse = True)
 
+		count = 0
 		tweetarr=[]
 		for k,v in finalFreq:
-			if v>3:
+			if v>3 and count<10:
 				j = str(v)
-				l = '<b></b>'+'You tweeted <b><a style="text-decoration:none; color:inherit;" target="_blank" href="http://search.twitter.com/search?q='+k+'"/>'+k+'</b> '+j+' times'
+				l = '<b></b>'+'You tweeted <b><a style="text-decoration:none; color:inherit;" target="_blank" href="http://search.twitter.com/search?q='+k+'"/>'+k+'</b> '+j+' times'+'<b></b>'
 				tweetarr.append(l)
+				count += 1
 				
 		tweetput = '<br><br>'.join(tweetarr)
 

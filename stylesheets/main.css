@@ -16,26 +16,7 @@ body {
 	color: #666;
 }
 
-.footer { 
-	color:gray;
-	font: normal small-caption;
-	text-align: center;
-	margin:auto;
-	width:100%;
-	}
 
-	
-#footersplitleft{
-	float:left;
-	font-size:20px;
-	margin-left:35%;
-
-}
-#footersplitright{
-	float:right;
-	font-size:20px;
-	margin-right:35%;
-}
 
 .biginput {
 	border: 1px solid #999;
@@ -78,20 +59,53 @@ body {
 	display:none;
 }
 
-#cwoud {
+.userData {
+;
+}
+
+#wcdiv {
+	position: relative;
 	text-align: justify;
-	width: 100%;
-	margin-left: auto ;
-  	margin-right: auto ;
+	width: 50%;
+	margin:auto;
+	margin-left:25%;
+	float:left;
+
 }
 
 
 #twable {
-	text-align: justify;
-	width: 50%;
-	margin-left: auto;
-  	margin-right: auto;
-	display:none;
+	position: absolute;
+	float:right;
+	text-align: center;
+	width: 25%;
+	right: 0px;
+	color: #264ca2;
+	font-size: 14px;
+	display: none;
+}
+
+.footer {
+	position: absolute;
+	color:gray;
+	font: normal small-caption;
+	text-align: center;
+	margin:auto;
+	width:99%;
+	top: 500px;
+	}
+
+	
+#footersplitleft{
+	float:left;
+	font-size:20px;
+	margin-left:35%;
+
+}
+#footersplitright{
+	float:right;
+	font-size:20px;
+	margin-right:35%;
 }
 
 /* word-cloud styles */
@@ -105,27 +119,3 @@ body {
 .word-cloud-7 {font-size: 36px; color: #071a41; }
 .word-cloud-8 {font-size: 40px; color: #081122; }
 .word-cloud-9 {font-size: 44px; color: #000000; }
-
-#wcdiv {
-	width: 600px;
-	text-align: justify;
-	margin-left: auto ;
-  	margin-right: auto ;
-}
-
-/*
-.label {
-	text-align: right;
-	float: left;
-	width: 205px;
-	line-height: 40px;
-
-}
-
-form{
-	margin-left: -250px;
-	left: 50%;
-	position: relative;
-	width: 500px;
-}
-*/
