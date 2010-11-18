@@ -107,7 +107,7 @@ WordCloud.prototype.draw = function(data, options) {
     maxFreq = Math.max(maxFreq, f);
   }
   var range = maxFreq - minFreq;
-  range = Math.max(range, 4);
+  range = Math.max(range, 2);
 
   // Idea: Add option to sort by text, freq or no sort
 
@@ -121,7 +121,7 @@ WordCloud.prototype.draw = function(data, options) {
 	{
 		var size = WordCloud.MIN_UNIT_SIZE +
 	         Math.round((freq - minFreq) / range * WordCloud.RANGE_UNIT_SIZE);
-	    html.push('<span class="word-cloud-', size, '">', text, '</span> ');
+	    html.push('<span class="word-cloud-', size, '">','<a style="text-decoration:none; color:inherit;" target="_blank" href="http://search.twitter.com/search?q=', text,'">', text, '</a>', '</span> ');
 	  }
 	}
 	

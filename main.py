@@ -76,7 +76,7 @@ class Statuspage(webapp.RequestHandler):
 		for k,v in finalFreq:
 			if v>3:
 				j = str(v)
-				l = '<b></b>'+'The word <b>'+k+'</b> was tweeted '+j+' times'
+				l = '<b></b>'+'You tweeted <b><a style="text-decoration:none; color:inherit;" target="_blank" href="http://search.twitter.com/search?q='+k+'"/>'+k+'</b> '+j+' times'
 				tweetarr.append(l)
 				
 		tweetput = '<br><br>'.join(tweetarr)

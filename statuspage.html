@@ -9,6 +9,7 @@
 	<!-- Date: 2010-10-29 -->
 
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/wc.css"/>
     <script type="text/javascript" src="/js/wc.js"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script src="http://code.jquery.com/jquery-1.4.4.js"></script>
@@ -25,14 +26,13 @@
 
       }
     </script>
-
 </head>
 
 <body> 
 <div class="yell"><strong>{{user}}'s</strong> favorite words:</div>
 
-<div id="wcdiv"></div>
-<br><br>
+<div><input type="submit" class="button" id="clicktable" value="ranking/wordcloud switch"/></div> 
+<br>
 <a href="http://twitter.com/share" class="twitter-share-button" 
 	data-text="My most commonly tweeted word is '{{mosttweet}}'! What's yours?" 
 	data-count="none" 
@@ -40,16 +40,50 @@
 	data-via="jrlevine and @alexmr"
 	data-count="vertical">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<div id="cwoud">
+<div id="wcdiv"></div>
+</div>
 <br><br>
+
 <div class = "footer">
+<div id="twable">
+{{tweetput}}
+</div>
+<br>
 Link to your wordcloud:
 <br>
 <a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a>
-
 </div>
 
+
+
 <br><br><br>
-<div><input type="submit" class="button" id="clickme" value="project updates" /></div> 
+
+<div class="footer"> 
+			Twordsie is an experiment in programming from Jake and Alex
+			<br>
+		<div id ="footersplitleft">
+			<br>
+			<b>Jake Links</b>
+			<br>
+			<a href="http://blog.jakerlevine.com"><img src="/images/rss.png" width="30" height="30"/></a>
+			<a href="http://twitter.com/jrlevine"><img src="/images/twitter.png" width="30" height="30"/></a>
+			<a href="http://www.linkedin.com/in/levinejake"><img src="/images/linkedin.png" width="30" height="30"/></a>
+		</div>
+		<div id ="footersplitright">
+			<br>
+			<b>Alex Links</b>
+			<br>
+			<a href="http://twitter.com/alexmr"><img src="/images/twitter.png" width="30" height="30"/></a>
+			<a href="http://www.linkedin.com/in/rosenalex"><img src="/images/linkedin.png" width="30" height="30"/></a>
+		</div>
+
+</div> 
+<p><a href="https://github.com/jakelevine/twordsie/"><img src="/images/download.png" width="40" height="40"/></a><br>
+<a href="https://github.com/jakelevine/twordsie/">Download our code</a></p>
+</p>
+<br>
+<div><input type="submit" class="button" id="clickblog" value="project updates" /></div> 
 <div id="blog">
 	<strong>11/14/10</strong>
 	<p>A big five days for Twordsie! Since the last iteration:
@@ -71,35 +105,33 @@ Link to your wordcloud:
 	<strong>11/07/10</strong>
 	<p>I learned all about how to slice with Google's <a href="http://www.youtube.com/watch?v=tKTZoB2Vjuk">corporate python courses.</a> Now to figure out how to slice multiple statuses into an array...</p>
 	</div>
-	<p><a href="https://github.com/jakelevine/twordsie/"><img src="/images/download.png" width="40" height="40"/></a><br>
-	<a href="https://github.com/jakelevine/twordsie/">Download our code</a></p>
-	</p>
-<div class="footer"> 
-			Twordsie is an experiment in programming from Jake and Alex
-			<br>
-		<div id ="footersplitleft">
-			<br>
-			<b>Jake Links</b>
-			<br>
-			<a href="http://blog.jakerlevine.com"><img src="/images/rss.png" width="30" height="30"/></a>
-			<a href="http://twitter.com/jrlevine"><img src="/images/twitter.png" width="30" height="30"/></a>
-			<a href="http://www.linkedin.com/in/levinejake"><img src="/images/linkedin.png" width="30" height="30"/></a>
-		</div>
-		<div id ="footersplitright">
-			<br>
-			<b>Alex Links</b>
-			<br>
-			<a href="http://twitter.com/alexmr"><img src="/images/twitter.png" width="30" height="30"/></a>
-			<a href="http://www.linkedin.com/in/rosenalex"><img src="/images/linkedin.png" width="30" height="30"/></a>
-		</div>
-
-		</div> 
+	
 		<script>
-		$('#clickme').click(function () {
+		$('#clickblog').click(function () {
 		if ($('#blog').is(":hidden")) {
-		$("#blog").slideDown('slow');
+		$('#blog').slideDown('slow');
 		} else {
 		$('#blog').slideUp('slow');
+		}
+		});
+		</script>
+		
+		<script>
+		$('#clicktable').click(function () {
+		if ($('#cwoud').is(":hidden")) {
+		$('#cwoud').slideDown();
+		} else {
+		$('#cwoud').slideUp();
+		}
+		});
+		</script>
+
+		<script>
+		$('#clicktable').click(function () {
+		if ($('#twable').is(":hidden")) {
+		$('#twable').slideDown('slow');
+		} else {
+		$('#twable').slideUp();
 		}
 		});
 		</script>
