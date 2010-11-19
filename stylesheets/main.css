@@ -70,20 +70,13 @@ body {
 	margin:auto;
 	margin-left:25%;
 	float:left;
-<<<<<<< HEAD
 	margin-bottom:15px;
-=======
-
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 }
 
 
 #twable {
-<<<<<<< HEAD
-	position: relative;
-=======
+    position: relative;
 	position: absolute;
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 	float:right;
 	text-align: center;
 	width: 25%;
@@ -91,54 +84,34 @@ body {
 	color: #264ca2;
 	font-size: 14px;
 	display: none;
-<<<<<<< HEAD
 	margin-top:40px;
 }
 
 .footer {
-	position:relative;
-=======
-}
-
-.footer {
-	position: absolute;
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
+	position: relative;
 	color:gray;
 	font: normal small-caption;
 	text-align: center;
 	margin:auto;
-<<<<<<< HEAD
 	padding-left:25%;
 	padding-right:25%;
-	}
+}
 
 
 #footersplitleft{
 	float:left;
 	font-size:20px;
 	margin-left:15%;
-=======
-	width:99%;
-	top: 500px;
 	}
 
 	
-#footersplitleft{
-	float:left;
-	font-size:20px;
-	margin-left:35%;
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
-
-}
 #footersplitright{
 	float:right;
 	font-size:20px;
-<<<<<<< HEAD
 	margin-right:15%;
-=======
-	margin-right:35%;
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
+
 }
+
 
 /* word-cloud styles */
 .word-cloud {font-family: arial; font-size: 10px; }
@@ -150,8 +123,5 @@ body {
 .word-cloud-6 {font-size: 32px; color: #002a8b; }
 .word-cloud-7 {font-size: 36px; color: #071a41; }
 .word-cloud-8 {font-size: 40px; color: #081122; }
-<<<<<<< HEAD
 .word-cloud-9 {font-size: 44px; color: #000000; }
-=======
 .word-cloud-9 {font-size: 44px; color: #000000; }
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06

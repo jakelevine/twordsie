@@ -31,7 +31,7 @@
 <body> 
 <div class="yell">
 	<strong>{{user}}'s</strong> favorite words:</div>
-<div><input type="submit" class="button" id="clicktable" value="show/hide results"/></div>
+<div><input type="submit" class="button" id="clicktable" value="show/hide top 10"/></div>
 <p>
 	<a href="http://twitter.com/share" class="twitter-share-button" 
 		data-text="My most commonly tweeted word is '{{mosttweet}}'! What's yours?" 
@@ -41,40 +41,23 @@
 		data-count="vertical">Tweet</a>
 		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></p>
 
-<<<<<<< HEAD
-<div><input type="submit" class="button" id="clicktable" value="show/hide details"/></div> 
-<br>
-<a href="http://twitter.com/share" class="twitter-share-button" 
-	data-text="My most commonly tweeted word is '{{mosttweet}}'! What's yours?" 
-	data-count="none" 
-	data-url="http://twordsie.appspot.com"
-	data-via="jrlevine and @alexmr"
-	data-count="vertical">Tweet</a>
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
 <div id="cwoud">
 <div id="wcdiv"></div>
 </div>
 
 <div id="twable">
+<b>Your top 10:</b>
+<br><br>
 {{tweetput}}
 </div>
 
-<div class="footer"> 
-	Link to your wordcloud:
-	<br>	
-	<a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a>
-	<br>
-=======
-<div class= "userData" id="wcdiv"></div>
-<div class= "userData" id="twable"> <b>Your top 10:</b><br><br>{{tweetput}} </div>	
 
 <div class="footer"> 
-	<p>
 Link to your wordcloud:
-<a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a></p>
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
-			Twordsie is an experiment in programming from Jake and Alex
+<br>
+<a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a>
+<br>
+Twordsie is an experiment in programming from Jake and Alex
 			<br />
 		<div id ="footersplitleft">
 			<br>
@@ -91,19 +74,11 @@ Link to your wordcloud:
 			<a href="http://twitter.com/alexmr"><img src="/images/twitter.png" width="30" height="30"/></a>
 			<a href="http://www.linkedin.com/in/rosenalex"><img src="/images/linkedin.png" width="30" height="30"/></a>
 		</div>
-<<<<<<< HEAD
 
-<p><a href="https://github.com/jakelevine/twordsie/"><img src="/images/download.png" width="40" height="40"/></a><br>
-<a href="https://github.com/jakelevine/twordsie/">Download our code</a></p></p>
-
-<div><input type="submit" class="button" id="clickblog" value="project updates" /></div> 
-
-=======
 		<p><a href="https://github.com/jakelevine/twordsie/"><img src="/images/download.png" width="40" height="40"/></a><br>
 		<a href="https://github.com/jakelevine/twordsie/">Download our code</a></p>
 	</p>
 	<div><input type="submit" class="button" id="clickblog" value="project updates" /></div> 
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 	<div id="blog">
 	<strong>11/14/10</strong>
 	<p>A big five days for Twordsie! Since the last iteration:
@@ -125,13 +100,10 @@ Link to your wordcloud:
 	<strong>11/07/10</strong>
 	<p>I learned all about how to slice with Google's <a href="http://www.youtube.com/watch?v=tKTZoB2Vjuk">corporate python courses.</a> Now to figure out how to slice multiple statuses into an array...</p>
 	</div>
-<<<<<<< HEAD
 </div> 
-=======
 		</div> 
 
 	
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 		<script>
 		$('#clickblog').click(function () {
 		if ($('#blog').is(":hidden")) {
@@ -141,11 +113,6 @@ Link to your wordcloud:
 		}
 		});
 		</script>
-<<<<<<< HEAD
-=======
-		
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
-
 
 
 			<script>

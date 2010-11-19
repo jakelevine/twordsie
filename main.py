@@ -47,7 +47,7 @@ class Statuspage(webapp.RequestHandler):
 		tweets = Tweets()
 		tweets.username = user
 		tweets.put()
-
+			
 		fetched = urlfetch.fetch("http://api.twitter.com/1/statuses/user_timeline.json"
 								 "?screen_name="+user+"&count=200")
 		tweets = json.loads(fetched.content)
@@ -59,14 +59,14 @@ class Statuspage(webapp.RequestHandler):
 		tweets1 = json.loads(fetched.content)
 		for tweetInfo in tweets1:
 		      tweetlist.append(tweetInfo["text"])
-
+		
 		tweets2 = ''.join(tweetlist)
 		tweets2 = tweets2.lower()
-
+	
 		fullWords = re.split('\W+',tweets2)
 		stopWords = set(['4sq','RT','doesn','Your','com','The','http','ly','bit','a', 'about', 'above', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also','although','always','am','among', 'amongst', 'amoungst', 'amount',  'an', 'and', 'another', 'any','anyhow','anyone','anything','anyway', 'anywhere', 'are', 'around', 'as',  'at', 'back','be','became', 'because','become','becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom','but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven','else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own','part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the'])
 		d = defaultdict(int)
-
+		
 		for word in fullWords:
 			if word not in stopWords and len(word)>2:
 				d[word] += 1
@@ -80,11 +80,7 @@ class Statuspage(webapp.RequestHandler):
 				l = '<b></b>'+'You tweeted <b><a style="text-decoration:none; color:inherit;" target="_blank" href="http://search.twitter.com/search?q='+k+'"/>'+k+'</b> '+j+' times'+'<b></b>'
 				tweetarr.append(l)
 				count += 1
-<<<<<<< HEAD
-
-=======
 				
->>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 		tweetput = '<br><br>'.join(tweetarr)
 
 		mosttweet = finalFreq[0]
@@ -92,7 +88,7 @@ class Statuspage(webapp.RequestHandler):
 		mtstart = mosttweet1.find("'")
 		mtend = mosttweet1.find(",")
 		mtput = mosttweet1[mtstart+1:mtend-1]
-
+		
 
 		template_values = {
 							'tweet_data': json.dumps(data),
@@ -100,7 +96,7 @@ class Statuspage(webapp.RequestHandler):
 							'tweetput':tweetput,
 							'mosttweet':mtput,
 							}
-
+							
 		path = os.path.join(os.path.dirname(__file__), 'statuspage.html')
 		self.response.out.write(template.render(path, template_values))
 
