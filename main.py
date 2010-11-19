@@ -80,7 +80,11 @@ class Statuspage(webapp.RequestHandler):
 				l = '<b></b>'+'You tweeted <b><a style="text-decoration:none; color:inherit;" target="_blank" href="http://search.twitter.com/search?q='+k+'"/>'+k+'</b> '+j+' times'+'<b></b>'
 				tweetarr.append(l)
 				count += 1
+<<<<<<< HEAD
 
+=======
+				
+>>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 		tweetput = '<br><br>'.join(tweetarr)
 
 		mosttweet = finalFreq[0]

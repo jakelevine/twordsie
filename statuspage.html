@@ -22,15 +22,26 @@
         var outputDiv = document.getElementById('wcdiv');
         var wc = new WordCloud(outputDiv);
         wc.draw(data, null);
-		wc.draw(data, {stopWords: '4sq RT com I doesn Yourcom The http ly bit a about above above across after afterwards again against all almost alone along already also although always am among amongst amoungst amount an and another any anyhow anyone anything anyway anywhere are around as at back be became because become becomes becoming been before beforehand behind being below beside besides between beyond bill both bottom but by call can cannot cant co con could couldnt cry de describe detail do done down due during each eg eight either eleven else elsewhere empty enough etc even ever every everyone everything everywhere except few fifteen fify fill find fire first five for former formerly forty found four from front full further get give go had has hasnt have he hence her here hereafter hereby herein hereupon hers herself him himself his how however hundred ie if in inc indeed interest into is it its itself keep last latter latterly least less ltd made many may me meanwhile might mill mine more moreover most mostly move much must my myself name namely neither never nevertheless next nine no nobody none noone nor not nothing now nowhere of off often on once one only onto or other others otherwise our ours ourselves out over own part per perhaps please put rather re same see seem seemed seeming seems serious several she should show side since sincere six sixty so some somehow someone something sometime sometimes somewhere still such system take ten than that the their them themselves then thence there thereafter thereby therefore therein thereupon these they thickv thin third this those though three through throughout thru thus to together too top toward towards twelve twenty two un under until up upon us very via was we well were what whatever when whence whenever where whereafter whereas whereby wherein whereupon wherever whether which while whither who whoever whole whom whose why will with within without would yet you your yours yourself yourselves the'});
+		wc.draw(data, {stopWords: '4sq RT com I doesn Yourcom The http ly bit a about above above across after afterwards again against all almost alone along already also although always am among amongst amoungst amount an and another any anyhow anyone anything anyway anywhere are around as at back be became because become becomes becoming been before beforehand behind being below beside besides between beyond bill both bottom but by call can cannot cant co con could couldnt cry de describe detail do done down due during each eg eight either eleven else elsewhere empty enough etc even ever every everyone everything everywhere except few fifteen fify fill find fire first five for former formerly forty found four from front full further get give go had has hasnt have he hence her here hereafter hereby herein hereupon hers herself him himself his how however hundred ie if in inc indeed interest into is it its itself keep last latter latterly least less ltd made many may me meanwhile might mill mine more moreover most mostly move much must my myself name namely neither never nevertheless next nine no nobody none noone nor not nothing now nowhere of off often on once one only onto or other others otherwise our ours ourselves out over own part per perhaps please put rather re same see seem seemed seeming seems serious just several she should show side since sincere six sixty so some somehow someone something sometime sometimes somewhere still such system take ten than that the their them themselves then thence there thereafter thereby therefore therein thereupon these they thickv thin third this those though three through throughout thru thus to together too top toward towards twelve twenty two un under until up upon us very via was we well were what whatever when whence whenever where whereafter whereas whereby wherein whereupon wherever whether which while whither who whoever whole whom whose why will with within without would yet you your yours yourself yourselves the'});
 
       }
     </script>
 </head>
 
 <body> 
-<div class="yell"><strong>{{user}}'s</strong> favorite words:</div>
+<div class="yell">
+	<strong>{{user}}'s</strong> favorite words:</div>
+<div><input type="submit" class="button" id="clicktable" value="show/hide results"/></div>
+<p>
+	<a href="http://twitter.com/share" class="twitter-share-button" 
+		data-text="My most commonly tweeted word is '{{mosttweet}}'! What's yours?" 
+		data-count="none" 
+		data-url="http://twordsie.appspot.com"
+		data-via="jrlevine and @alexmr"
+		data-count="vertical">Tweet</a>
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></p>
 
+<<<<<<< HEAD
 <div><input type="submit" class="button" id="clicktable" value="show/hide details"/></div> 
 <br>
 <a href="http://twitter.com/share" class="twitter-share-button" 
@@ -54,8 +65,17 @@
 	<br>	
 	<a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a>
 	<br>
+=======
+<div class= "userData" id="wcdiv"></div>
+<div class= "userData" id="twable"> <b>Your top 10:</b><br><br>{{tweetput}} </div>	
+
+<div class="footer"> 
+	<p>
+Link to your wordcloud:
+<a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a></p>
+>>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 			Twordsie is an experiment in programming from Jake and Alex
-			<br>
+			<br />
 		<div id ="footersplitleft">
 			<br>
 			<b>Jake Links</b>
@@ -71,12 +91,19 @@
 			<a href="http://twitter.com/alexmr"><img src="/images/twitter.png" width="30" height="30"/></a>
 			<a href="http://www.linkedin.com/in/rosenalex"><img src="/images/linkedin.png" width="30" height="30"/></a>
 		</div>
+<<<<<<< HEAD
 
 <p><a href="https://github.com/jakelevine/twordsie/"><img src="/images/download.png" width="40" height="40"/></a><br>
 <a href="https://github.com/jakelevine/twordsie/">Download our code</a></p></p>
 
 <div><input type="submit" class="button" id="clickblog" value="project updates" /></div> 
 
+=======
+		<p><a href="https://github.com/jakelevine/twordsie/"><img src="/images/download.png" width="40" height="40"/></a><br>
+		<a href="https://github.com/jakelevine/twordsie/">Download our code</a></p>
+	</p>
+	<div><input type="submit" class="button" id="clickblog" value="project updates" /></div> 
+>>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 	<div id="blog">
 	<strong>11/14/10</strong>
 	<p>A big five days for Twordsie! Since the last iteration:
@@ -98,7 +125,13 @@
 	<strong>11/07/10</strong>
 	<p>I learned all about how to slice with Google's <a href="http://www.youtube.com/watch?v=tKTZoB2Vjuk">corporate python courses.</a> Now to figure out how to slice multiple statuses into an array...</p>
 	</div>
+<<<<<<< HEAD
 </div> 
+=======
+		</div> 
+
+	
+>>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 		<script>
 		$('#clickblog').click(function () {
 		if ($('#blog').is(":hidden")) {
@@ -108,8 +141,14 @@
 		}
 		});
 		</script>
+<<<<<<< HEAD
+=======
+		
+>>>>>>> aa33f712101139166eacb1a7b1f3de23d9800f06
 
-		<script>
+
+
+			<script>
 		$('#clicktable').click(function () {
 		if ($('#twable').is(":hidden")) {
 		$('#twable').slideDown('slow');
@@ -118,6 +157,7 @@
 		}
 		});
 		</script>
+
 
 </body>
 </html>
