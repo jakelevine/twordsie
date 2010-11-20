@@ -60,57 +60,52 @@ body {
 }
 
 .userData {
-	position: absolute;
-	top: 160px;
 }
 
 #wcdiv {
-	position: absolute;
+	position: relative;
+	float:left;
 	text-align: justify;
-	width: 450px;
-	left: 50%;
-	margin-left: -225px;
-	max-height: 315px;
+	width: 50%;
+	margin-left:25%;
 	overflow: hidden;
-
 }
 
 
 #twable {
-	position: absolute;
+	position: relative;
 	text-align: center;
 	width: 20%;
-	right: 25px;
+	float:right;
 	color: #264ca2;
 	font-size: 14px;
 	display: none;
 }
 
 .footer {
-	position: absolute;
 	color:gray;
 	font: normal small-caption;
 	text-align: center;
-	margin:auto;
+	padding-top:10%;
 	width:100%;
-	top: 520px;
-	}
+}
 
 .1stpagefooter {
 	position:absolute;
-	top: 300px;;
+	top: 300px;
+	color:gray;
 }
 
 #footersplitleft{
 	float:left;
 	font-size:20px;
-	margin-left:35%;
+	margin-left:30%;
 
 }
 #footersplitright{
 	float:right;
 	font-size:20px;
-	margin-right:35%;
+	margin-right:30%;
 }
 
 /* word-cloud styles */
