@@ -1,7 +1,9 @@
 body {
 	background-color: #E8E8E8;
 	text-align: center;
-	font-family: Helvetica
+	font-family: Helvetica;
+	max-width: 1000px;
+	margin:auto;
 }
 
 .yell {
@@ -62,24 +64,35 @@ body {
 .userData {
 }
 
+.ui-tabs .ui-tabs-hide 
+{
+     display: none;
+}
+
+#mostat {
+	position: relative;
+	float:left;
+	text-align: justify;
+	width: 25%;
+	color: #264ca2;
+	font-size: 14px;
+}
+
 #wcdiv {
 	position: relative;
 	float:left;
 	text-align: justify;
 	width: 50%;
-	margin-left:25%;
-	overflow: hidden;
 }
 
 
 #twable {
 	position: relative;
 	text-align: center;
-	width: 20%;
+	width: 25%;
 	float:right;
 	color: #264ca2;
 	font-size: 14px;
-	display: none;
 }
 
 .footer {

@@ -53,6 +53,8 @@ class Statuspage(webapp.RequestHandler):
 		tweets = json.loads(fetched.content)
 		data = {'cols': [{'type': 'string', 'label': 'Tweets'}],
 				'rows': [{'c': [{'v': tweet["text"]}]} for tweet in tweets]}
+				
+		
 
 		#sets up table output
 		tweetlist = []
@@ -72,6 +74,25 @@ class Statuspage(webapp.RequestHandler):
 				d[word] += 1
 		finalFreq = sorted(d.iteritems(), key = lambda t: t[1], reverse = True)
 		
+		atWordsString = re.split('[^\w@]',tweets2)
+		
+		dAt =defaultdict(int)
+		for word in atWordsString:
+			wordvar = word.strip(":,'()")
+			if wordvar.find("@") != -1 and len(wordvar)>1:
+				if wordvar.find("@") > 0:
+					begin = wordvar.find("@")
+				else:
+					begin = 0
+				if wordvar[1:].find("@") != -1:
+					end = wordvar[1:].find("@")
+				else:
+					end = len(wordvar)
+					
+					dAt[wordvar[begin:end]] += 1
+		atFreq = sorted(dAt.iteritems(), key = lambda t: t[1], reverse = True)	
+			
+		
 		i = 1
 		tweetarr=[]
 		for k,v in finalFreq:
@@ -81,7 +102,17 @@ class Statuspage(webapp.RequestHandler):
 				tweetarr.append(l)
 				i += 1
 				
+		i2 = 1
+		atArr=[]
+		for k,v in atFreq:
+			if i2<11:
+				j2 = str(v)
+				l = '<b></b>'+str(i2)+'. '+k
+				atArr.append(l)
+				i2 += 1
+				
 		tweetput = '<br><br>'.join(tweetarr)
+		atPut = '<br><br>'.join(atArr)
 
 		mosttweet = finalFreq[0]
 		mosttweet1 = str(mosttweet)
@@ -95,6 +126,7 @@ class Statuspage(webapp.RequestHandler):
 							'user':user,
 							'tweetput':tweetput,
 							'mosttweet':mtput,
+							'mostat' :atPut,
 							}
 							
 		path = os.path.join(os.path.dirname(__file__), 'statuspage.html')

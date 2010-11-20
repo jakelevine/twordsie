@@ -31,7 +31,6 @@
 <body> 
 <div class="yell">
 	<strong>{{user}}'s</strong> favorite words:</div>
-<div><input type="submit" class="button" id="clicktable" value="show/hide your top 10"/></div>
 <p>
 	<a href="http://twitter.com/share" class="twitter-share-button" 
 		data-text="My most commonly tweeted word is '{{mosttweet}}'! What's yours?" 
@@ -41,8 +40,9 @@
 		data-count="vertical">Tweet</a>
 		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></p>
 
-<div class= "userData" id="wcdiv"></div>
-<div class= "userData" id="twable"> {{tweetput}} </div>	
+<div id="mostat">{{mostat}}</div>
+<div id="wcdiv"></div>
+<div id="twable"> {{tweetput}} </div>	
 
 <div class="footer"> 
 <a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a>
@@ -104,17 +104,12 @@
 		
 
 
-
-			<script>
-		$('#clicktable').click(function () {
-		if ($('#twable').is(":hidden")) {
-		$('#twable').slideDown('slow');
-		} else {
-		$('#twable').slideUp();
-		}
-		});
+		<script>
+			$(function() {
+				$( "#tabs" ).tabs();
+			});
 		</script>
-
+	
 
 </body>
 </html>
