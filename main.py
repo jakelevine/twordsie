@@ -107,7 +107,7 @@ class Statuspage(webapp.RequestHandler):
 		for k,v in atFreq:
 			if i2<11:
 				j2 = str(v)
-				l = '<b></b>'+str(i2)+'. '+k
+				l = '<b></b>'+str(i2)+'. '+ k
 				atArr.append(l)
 				i2 += 1
 				

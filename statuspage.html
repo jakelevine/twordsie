@@ -31,6 +31,7 @@
 <body> 
 <div class="yell">
 	<strong>{{user}}'s</strong> favorite words:</div>
+<div><input type="submit" class="button" id="clicktable" value="show/hide your scoreboard"/></div> 
 <p>
 	<a href="http://twitter.com/share" class="twitter-share-button" 
 		data-text="My most commonly tweeted word is '{{mosttweet}}'! What's yours?" 
@@ -39,12 +40,15 @@
 		data-via="jrlevine and @alexmr"
 		data-count="vertical">Tweet</a>
 		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></p>
-
-<div id="mostat">{{mostat}}</div>
+<div class="clearfix">
+<div id="mostat">
+	<strong>Your top friends:</strong> <br><br>{{mostat}}</div>
 <div id="wcdiv"></div>
-<div id="twable"> {{tweetput}} </div>	
-
-<div class="footer"> 
+<div id="twable"> 
+	<strong>Your top tweeted words:</strong><br><br>{{tweetput}} </div>	
+	</div>
+	
+<div class="footer clearfix"> 
 <a href="http://twordsie.appspot.com/statuspage?user={{user}}">http://twordsie.appspot.com/statuspage?user={{user}}</a>
 <br><br>
 			Twordsie is an experiment in programming from Jake and Alex
@@ -109,6 +113,19 @@
 				$( "#tabs" ).tabs();
 			});
 		</script>
+		
+			<script> 
+		$('#clicktable').click(function () {
+			// $("#twable, #mostat").slideToggle();
+			var jq = $("#twable, #mostat");
+			if (jq.height() === 1) {
+				jq.animate({height: '300px'});
+			} else {
+				jq.animate({height: '1px'});
+			}
+			console.log(jq.height());
+		});
+		</script> 
 	
 
 </body>
